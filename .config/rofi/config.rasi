@@ -1,0 +1,152 @@
+/*-----Configuration-----*/
+
+configuration {
+	modes: "drun";
+	font: "JetbrainsMono Nerd Font";
+	drun-display-format: "{name}";
+}
+
+/*-----Global-----*/
+
+* {
+	color0: #191724; /* base */
+	color2: #ebbcba; /* rose */
+	color3: #26233a; /* overlay */
+	color4: #31748f; /* teal */
+	color5: #e0def4; /* text */
+	color8: #1f1d2e; /* surface */
+	color9: #21202e; /* subtle */
+
+	fg-highlight: @color4;
+
+	bg-entry: @color9;
+	fg-entry: @color4;
+	fg-placeholder: #e0def450; /* text with 50% opacity */
+
+	bg-listview: @color0;
+	fg-element: @color5;
+
+	bg-element-selected: @color8;
+	fg-element-selected: @color2;
+	border-color-element-selected: @color3;
+
+	bg-inputbar: @color0;
+
+	border-color: @color3;
+
+	// border-radius
+    br: 2px;
+
+	border-size-window: 2px;
+	border-size-element-selected: 2px;
+
+	spacing: 0;
+}
+
+/*-----Main Window-----*/
+
+window {
+	transparency: "real";
+	background-color: transparent;
+
+	padding: 0;
+
+	children: [mainbox];
+
+	border: @border-size-window;
+	border-color: @border-color;
+
+	border-radius: @br;
+
+	width: 20%;
+}
+
+/*-----Main Box-----*/
+
+mainbox {
+    children: [inputbar, listview];
+    orientation: vertical;
+}
+
+/*-----Input Bar-----*/
+
+inputbar {
+	children: [entry];
+
+	background-color: @bg-inputbar;
+}
+
+entry {
+	color: @fg-entry;
+	placeholder-color: @fg-placeholder;
+	background-color: @bg-entry;
+
+	placeholder:  "";
+
+	text-transform: bold;
+
+	border-radius: @br;
+
+	padding: 12px;
+	margin: 10px;
+    
+	vertical-align: 0.5;
+
+	border: 0;
+}
+
+/*-----List View-----*/
+
+listview {
+	scrollbar: false;
+
+	border: 0;
+	lines: 5;   // 8 elements "per page"
+
+	background-color: @bg-listview;
+
+	padding: 10px;
+}
+
+element {
+	children: [element-icon, element-text];
+	spacing: 10px;
+
+	border-radius: @br;
+}
+
+element-icon {
+	vertical-aling: 0.5;
+
+	margin: 0 0 0 10px;
+}
+
+element-text {
+	vertical-align: 0.5;
+	text-transform: bold;
+
+	border-radius: @br;
+
+	color: @fg-element;
+	highlight: @fg-highlight;
+
+	padding: 5px;
+	margin: 10px 10px 10px 0;
+}
+
+element selected.normal {
+	background-color: @bg-element-selected;
+
+	border: @border-size-element-selected;
+	border-color: @border-color-element-selected;
+}
+
+element-text selected {
+	color: @fg-element-selected;
+	text-transform: bold;
+}
+
+element normal.normal,
+element alternate.normal {
+	background-color: transparent;
+}
