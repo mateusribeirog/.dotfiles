@@ -7,7 +7,7 @@ background-blur = false
 confirm-close-surface=false
 shell-integration-features = no-cursor,no-sudo,no-title
 gtk-titlebar = false
-cursor-style = bar 
+cursor-style = block
 # what is a prefix?
 # keybind = ctrl+d=scroll_page_fractional:0.5
 # keybind = ctrl+u=scroll_page_fractional:-0.5

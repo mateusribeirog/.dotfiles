@@ -8,7 +8,6 @@
   "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
-    "hyprland/language",
     "battery",
     "network",
     "cpu",
@@ -28,14 +27,7 @@
     "icon-size": 18,
     "spacing": 10
   },
- 
-  "hyprland/language": {
-    "format": " {}",
-    "format-us": "US",
-    "format-br": "BR"
-  },
-
- "clock": {
+  "clock": {
     "timezone": "America/Fortaleza",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%d/%m - %H:%M}"
