@@ -1,17 +1,13 @@
 return {
     'stevearc/conform.nvim',
-    opts = {},
-    config = function()
-        require("conform").setup({
-            formatters_by_ft = {
-                lua = { "stylua" },
-                pyton = { "black" },
-            },
-            format_on_save = {
-                -- These options will be passed to conform.format()
-                timeout_ms = 500,
-                lsp_format = "fallback",
-            },
-        })
-    end
+    opts = {
+        formatters_by_ft = {
+            python = { "ruff_fix", "ruff_format" },
+        },
+        format_on_save = {
+            -- I recommend these options. See :help conform.format for details.
+            lsp_format = "fallback",
+            timeout_ms = 500,
+        },
+    },
 }
