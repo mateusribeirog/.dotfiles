@@ -3,7 +3,7 @@
 # Path to your Oh My Zsh installation.
 alias vim='nvim'
 export ZSH="$HOME/.oh-my-zsh"
-
+export EDITOR="nvim"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -108,3 +108,4 @@ export PATH=$PATH:/home/mateus/.spicetify
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+eval "$(zoxide init zsh)"
