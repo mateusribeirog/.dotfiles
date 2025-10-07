@@ -85,6 +85,29 @@ return {
             ColorMyPencils()
         end
     },
-
+    {
+        "metalelf0/black-metal-theme-neovim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("black-metal").setup({
+                -- optional configuration here
+                theme = "taake",
+                variant = "dark",
+                code_style = {
+                    comments = "none",
+                    conditionals = "none",
+                    functions = "none",
+                    keywords = "none",
+                    headings = "bold", -- Markdown headings
+                    operators = "none",
+                    keyword_return = "none",
+                    strings = "none",
+                    variables = "none",
+                },
+            })
+            require("black-metal").load()
+        end,
+    }
 
 }
