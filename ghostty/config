@@ -3,7 +3,7 @@
 #font-size = 14
 theme = Gruvbox Dark
 background = 000000
-background-opacity = 0.85
+background-opacity = 0.65
 background-blur = false
 confirm-close-surface=false
 shell-integration-features = no-cursor,no-sudo,no-title

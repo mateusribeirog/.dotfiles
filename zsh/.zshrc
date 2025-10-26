@@ -109,3 +109,5 @@ PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 eval "$(zoxide init zsh)"
+
+. "$HOME/.local/bin/env"
