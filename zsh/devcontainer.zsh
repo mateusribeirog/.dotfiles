@@ -47,18 +47,12 @@ dvc-up () {
         --mount "type=bind,source=$HOME/.config/nvim,target=/home/$user_name/.config/nvim" \
         --mount "type=bind,source=$HOME/.local/share/nvim,target=/home/$user_name/.local/share/nvim" \
         --mount "type=bind,source=$HOME/.local/state/nvim,target=/home/$user_name/.local/state/nvim" \
-        --mount "type=bind,source=$HOME/.cache/wal,target=/home/$user_name/.cache/wal" \
+        --mount "type=bind,source=$HOME/.dotfiles,target=/home/$user_name/.dotfiles" \
         --mount "type=bind,source=/tmp/tmux-1000/,target=/tmp/tmux-1000/" \
         --mount "type=bind,source=$HOME/.gitconfig,target=/home/$user_name/.gitconfig" \
         --mount "type=bind,source=$HOME/.ssh,target=/home/$user_name/.ssh" \
         --mount "type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix" \
         --mount "type=bind,source=$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY,target=$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" \
-        --remote-env "GIT_SSH_COMMAND=ssh -o StrictHostKeyChecking=no" \ 
-        --remote-env "DISPLAY=$DISPLAY" \ 
-        --remote-env "WAYLAND_DISPLAY=$WAYLAND_DISPLAY" \ 
-        --remote-env "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR" \ 
-        --remote-env "GIT_SSH_COMMAND=ssh -o StrictHostKeyChecking=no" \
-        --remote-env "DISPLAY=$DISPLAY" \
         --additional-features '{
             "ghcr.io/devcontainers/features/git:1": {},
             "ghcr.io/devcontainers-extra/features/fzf:1": {},
