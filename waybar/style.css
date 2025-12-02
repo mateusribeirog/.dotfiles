@@ -1,139 +1,161 @@
+@define-color bg        #282828; 
+@define-color fg        #ebdbb2; 
+@define-color gray      #928374; 
+@define-color red       #fb4934; 
+@define-color green     #b8bb26; 
+@define-color yellow    #fabd2f; 
+@define-color blue      #83a598; 
+@define-color purple    #d3869b; 
+@define-color aqua      #8ec07c; 
+@define-color orange    #fe8019; 
+
 * {
-  /*font-family: "Iosevka Term", monospace;*/
-  font-family: "JetBrainsMonoNerdFont";
-  font-size: 11px;
-  min-height: 0px;
-  padding-right: 6px;
-  padding-left: 0px;
+    background-color: @bg;
+    color: @fg;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 12px;
 }
 
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 2px 2px;
-  border-radius: 5px;
-}
-
-#workspaces {
-  border-radius: 5px;
-  margin: 5px;
-  background: #101010;
-  margin-left: 1rem;
-  padding: 0.2rem;
+window#waybar {
+    background-color: @bg;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px;
-  padding: 0.4rem;
+    all: initial; 
+    background-color: @bg;
+    color: @gray; 
+    padding: 0 6px;
+    margin: 0 1.5px;
+    min-width: 9px;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 12px;
 }
 
 #workspaces button.active {
-  color: #99d1db;
-  border-radius: 5px;
+    color: @orange;     font-weight: bold;
 }
 
 #workspaces button:hover {
-  color: #85c1dc;
-  border-radius: 5px;
+    color: @fg; }
+
+#workspaces button.empty {
+    opacity: 0.5;
 }
 
-#custom-music,
-#tray,
-#backlight,
-#clock,
+
+#cpu,
+#memory,
 #battery,
 #pulseaudio,
 #network,
-#cpu,
-#memory,
+#backlight,
+#custom-music,
+#custom-spotify,
 #custom-lock,
-#custom-power {
-  background-color: #101010;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
-  border-radius: 0px 5px 5px 0px;
+#custom-power,
+#language,
+#tray {
+    min-width: 12px;
+    margin: 0 7.5px;
+    background-color: @bg;
 }
 
-#memory {
-  border-radius: 0px;
-}
-#custom-spotify{
-  background-color: #101010;
-  color: #babbf1;
-  border-radius: 5px 5px 5px 5px;
-  margin: 5px 5px 5px 5px;
-  padding: 0rem 1.0rem;
-}
+
 #clock {
-  color: #8caaee;
-  border-radius: 5px;
-  margin-right: 0rem;
-}
-
-#network {
-  border-radius: 0px;
-}
-
-#cpu {
-  border-radius: 0px;
+    margin-left: 8.75px;
+    margin-right: 8.75px;
+    color: @blue;
+    font-weight: bold;
 }
 
 #battery {
-  color: #a6d189;
-}
-
-#language{
-  background-color: #101010;
-  border-radius: 0px;
-  border-radius: 0px;
-  margin: 5px 0px 5px 0px;
-}
-
-#battery.charging {
-  color: #a6d189;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-  color: #e78284;
+    color: @red;
 }
 
-#backlight {
-  color: #e5c890;
+#cpu { 
+    color: @red; }
+
+#memory { 
+    color: @yellow; 
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
+#network { 
+    color: @aqua; 
 }
 
-#pulseaudio {
-  color: #ea999c;
-  border-radius: 5px 0px 0px 5%;
-  margin-left: 1rem;
+#pulseaudio { 
+    color: @purple; 
 }
 
-#custom-music {
-  color: #ca9ee6;
-  border-radius: 5px;
+#backlight { 
+    color: @yellow; 
 }
 
-#custom-lock {
-  border-radius: 0 5px 5px 0;
-  color: #babbf1;
+#custom-spotify { 
+    color: @green; 
 }
 
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
+#custom-music { 
+    color: @purple; 
+}
+
+#custom-lock { 
+    color: @gray; 
+}
+
+#custom-power { 
+    color: @red; 
+}
+
+#language {
+    color: @fg;
 }
 
 
 #tray {
-  margin-right: 0rem;
-  margin-left: 0rem;
-  border-radius: 0px;
+    margin-right: 16px;
 }
 
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
 
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#network {
+    margin-right: 13px;
+}
+
+.modules-left {
+    margin-left: 8px;
+}
+
+.modules-right {
+    margin-right: 8px;
+}
+
+tooltip {
+    background: @bg;
+    border: 1px solid @orange; 
+    padding: 4px;
+}
+
+tooltip label {
+    color: @fg;
+}
+
+.hidden {
+    opacity: 0;
+}

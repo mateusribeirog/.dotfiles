@@ -9,13 +9,13 @@ configuration {
 /*-----Global-----*/
 
 * {
-	color0: #191724; /* base */
-	color2: #ebbcba; /* rose */
-	color3: #26233a; /* overlay */
-	color4: #31748f; /* teal */
-	color5: #e0def4; /* text */
-	color8: #1f1d2e; /* surface */
-	color9: #21202e; /* subtle */
+	color0: #282828; 
+    color2: #fe8019; 
+    color3: #928374; 
+    color4: #8ec07c; 
+    color5: #ebdbb2; 
+    color8: #3c3836; 
+    color9: #32302f; 
 
 	fg-highlight: @color4;
 

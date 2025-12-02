@@ -33,6 +33,8 @@ end
 
 toggle_diag()
 
-vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, { noremap = true })
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { noremap = true })
-vim.keymap.set('n', '<leader>dt', toggle_diag, { noremap = true })
+map('n', '<leader>dv', vim.diagnostic.open_float, { noremap = true })
+map('n', '<leader>dq', vim.diagnostic.setloclist, { noremap = true })
+map('n', '<leader>dt', toggle_diag, { noremap = true })
+
+map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

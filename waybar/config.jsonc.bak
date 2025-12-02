@@ -1,6 +1,7 @@
 {
   "layer": "top",
   "position": "top",
+
   "modules-left": [
         "hyprland/workspaces",
         "custom/spotify"
@@ -8,6 +9,7 @@
   "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
+    "hyprland/language",
     "battery",
     "network",
     "cpu",
@@ -27,7 +29,14 @@
     "icon-size": 18,
     "spacing": 10
   },
-  "clock": {
+ 
+  "hyprland/language": {
+    "format": " {}",
+    "format-us": "US",
+    "format-br": "BR"
+  },
+
+ "clock": {
     "timezone": "America/Fortaleza",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%d/%m - %H:%M}"
@@ -77,4 +86,5 @@
     }
 
 }
+
 
