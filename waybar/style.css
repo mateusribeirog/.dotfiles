@@ -1,13 +1,78 @@
-@define-color bg        #282828; 
-@define-color fg        #ebdbb2; 
-@define-color gray      #928374; 
-@define-color red       #fb4934; 
-@define-color green     #b8bb26; 
-@define-color yellow    #fabd2f; 
-@define-color blue      #83a598; 
-@define-color purple    #d3869b; 
-@define-color aqua      #8ec07c; 
-@define-color orange    #fe8019; 
+
+/* ------------------------------------------------------------------------------
+   GRUVBOX DARK
+   ------------------------------------------------------------------------------ */
+@define-color bg                #282828; /* Dark0 */
+@define-color fg                #ebdbb2; /* Light1 */
+@define-color inactive          #928374; /* Gray */
+@define-color active_workspace  #fe8019; /* Orange */
+@define-color urgent            #fb4934; /* Red */
+@define-color clock_color       #83a598; /* Blue */
+@define-color cpu_color         #fb4934; /* Red */
+@define-color memory_color      #fabd2f; /* Yellow */
+@define-color network_color     #8ec07c; /* Aqua */
+@define-color audio_color       #d3869b; /* Purple */
+@define-color battery_color     #b8bb26; /* Green */
+@define-color spotify_color     #b8bb26; /* Green */
+@define-color tray_bg           #282828;
+
+/* ------------------------------------------------------------------------------
+   CATPPUCCIN MOCHA 
+   ------------------------------------------------------------------------------ */
+/*
+@define-color bg                #1e1e2e;
+@define-color fg                #cdd6f4;
+@define-color inactive          #6c7086;
+@define-color active_workspace  #cba6f7; 
+@define-color urgent            #f38ba8; 
+@define-color clock_color       #89b4fa; 
+@define-color cpu_color         #fab387; 
+@define-color memory_color      #f9e2af; 
+@define-color network_color     #89dceb; 
+@define-color audio_color       #f5c2e7; 
+@define-color battery_color     #a6e3a1; 
+@define-color spotify_color     #a6e3a1; 
+@define-color tray_bg           #1e1e2e;
+*/
+
+/* ------------------------------------------------------------------------------
+   DRACULA 
+   ------------------------------------------------------------------------------ */
+/*
+@define-color bg                #282a36;
+@define-color fg                #f8f8f2;
+@define-color inactive          #6272a4;
+@define-color active_workspace  #bd93f9; 
+@define-color urgent            #ff5555; 
+@define-color clock_color       #bd93f9; 
+@define-color cpu_color         #ffb86c; 
+@define-color memory_color      #f1fa8c; 
+@define-color network_color     #8be9fd; 
+@define-color audio_color       #ff79c6; 
+@define-color battery_color     #50fa7b; 
+@define-color spotify_color     #50fa7b; 
+@define-color tray_bg           #282a36;
+*/
+
+/* ------------------------------------------------------------------------------
+   ROSÉ PINE MOON 
+   ------------------------------------------------------------------------------ */
+/*
+@define-color bg                #232136;
+@define-color fg                #e0def4;
+@define-color inactive          #6e6a86;
+@define-color active_workspace  #ea9a97; 
+@define-color urgent            #eb6f92; 
+@define-color clock_color       #c4a7e7; 
+@define-color cpu_color         #f6c177; 
+@define-color memory_color      #ea9a97; 
+@define-color network_color     #3e8fb0; 
+@define-color audio_color       #eb6f92; 
+@define-color battery_color     #9ccfd8; 
+@define-color spotify_color     #3e8fb0; 
+@define-color tray_bg           #232136;
+*/
+
 
 * {
     background-color: @bg;
@@ -25,10 +90,11 @@ window#waybar {
     transition-duration: .5s;
 }
 
+/* --- Workspaces --- */
 #workspaces button {
     all: initial; 
     background-color: @bg;
-    color: @gray; 
+    color: @inactive; 
     padding: 0 6px;
     margin: 0 1.5px;
     min-width: 9px;
@@ -37,17 +103,19 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @orange;     font-weight: bold;
+    color: @active_workspace;
+    font-weight: bold;
 }
 
 #workspaces button:hover {
-    color: @fg; }
+    color: @fg;
+}
 
 #workspaces button.empty {
     opacity: 0.5;
 }
 
-
+/* --- Módulos Gerais --- */
 #cpu,
 #memory,
 #battery,
@@ -59,70 +127,52 @@ window#waybar {
 #custom-lock,
 #custom-power,
 #language,
-#tray {
+#tray,
+#clock {
     min-width: 12px;
     margin: 0 7.5px;
     background-color: @bg;
 }
 
+/* --- Cores Mapeadas --- */
 
 #clock {
     margin-left: 8.75px;
     margin-right: 8.75px;
-    color: @blue;
+    color: @clock_color;
     font-weight: bold;
 }
 
-#battery {
-    color: @green;
-}
+#cpu { color: @cpu_color; }
+#memory { color: @memory_color; }
+#backlight { color: @memory_color; } 
+
+#network { color: @network_color; }
+
+#pulseaudio { color: @audio_color; }
+#custom-music { color: @audio_color; }
+
+#battery { color: @battery_color; }
+#custom-spotify { color: @spotify_color; }
 
 #battery.warning:not(.charging) {
-    color: @red;
+    color: @urgent;
 }
 
-#cpu { 
-    color: @red; }
-
-#memory { 
-    color: @yellow; 
+#custom-power {
+    color: @urgent;
+    margin-right: 4px;
 }
 
-#network { 
-    color: @aqua; 
+#custom-lock {
+    color: @inactive;
 }
 
-#pulseaudio { 
-    color: @purple; 
-}
-
-#backlight { 
-    color: @yellow; 
-}
-
-#custom-spotify { 
-    color: @green; 
-}
-
-#custom-music { 
-    color: @purple; 
-}
-
-#custom-lock { 
-    color: @gray; 
-}
-
-#custom-power { 
-    color: @red; 
-}
-
-#language {
-    color: @fg;
-}
-
+/* --- Ajustes de Posição --- */
 
 #tray {
     margin-right: 16px;
+    background-color: @tray_bg;
 }
 
 #tray > .passive {
@@ -131,7 +181,7 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @red;
+    background-color: @urgent;
 }
 
 #network {
@@ -146,9 +196,10 @@ window#waybar {
     margin-right: 8px;
 }
 
+/* --- Tooltips --- */
 tooltip {
     background: @bg;
-    border: 1px solid @orange; 
+    border: 1px solid @active_workspace;
     padding: 4px;
 }
 
