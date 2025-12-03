@@ -2,24 +2,26 @@
 /* ------------------------------------------------------------------------------
    GRUVBOX DARK
    ------------------------------------------------------------------------------ */
-@define-color bg                #282828; /* Dark0 */
-@define-color fg                #ebdbb2; /* Light1 */
-@define-color inactive          #928374; /* Gray */
-@define-color active_workspace  #fe8019; /* Orange */
-@define-color urgent            #fb4934; /* Red */
-@define-color clock_color       #83a598; /* Blue */
-@define-color cpu_color         #fb4934; /* Red */
-@define-color memory_color      #fabd2f; /* Yellow */
-@define-color network_color     #8ec07c; /* Aqua */
-@define-color audio_color       #d3869b; /* Purple */
-@define-color battery_color     #b8bb26; /* Green */
-@define-color spotify_color     #b8bb26; /* Green */
+/*
+@define-color bg                #282828; 
+@define-color fg                #ebdbb2;
+@define-color inactive          #928374; 
+@define-color active_workspace  #fe8019; 
+@define-color urgent            #fb4934; 
+@define-color clock_color       #83a598; 
+@define-color cpu_color         #fb4934; 
+@define-color memory_color      #fabd2f; 
+@define-color network_color     #8ec07c; 
+@define-color audio_color       #d3869b; 
+@define-color battery_color     #b8bb26; 
+@define-color spotify_color     #b8bb26; 
 @define-color tray_bg           #282828;
+*/
 
 /* ------------------------------------------------------------------------------
    CATPPUCCIN MOCHA 
    ------------------------------------------------------------------------------ */
-/*
+
 @define-color bg                #1e1e2e;
 @define-color fg                #cdd6f4;
 @define-color inactive          #6c7086;
@@ -33,7 +35,7 @@
 @define-color battery_color     #a6e3a1; 
 @define-color spotify_color     #a6e3a1; 
 @define-color tray_bg           #1e1e2e;
-*/
+
 
 /* ------------------------------------------------------------------------------
    DRACULA 
@@ -165,7 +167,7 @@ window#waybar {
 }
 
 #custom-lock {
-    color: @inactive;
+    color: @fg;
 }
 
 /* --- Ajustes de Posição --- */

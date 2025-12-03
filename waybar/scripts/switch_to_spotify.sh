@@ -11,8 +11,8 @@ fi
 # Obtém informações dos clientes (janelas) abertos com hyprctl
 CLIENTS=$(hyprctl clients -j)
 
-# Procura pela janela do Spotify (classe geralmente é "Spotify")
-WORKSPACE=$(echo "$CLIENTS" | jq -r '.[] | select(.class == "Spotify") | .workspace.id')
+# Procura pela janela do Spotify 
+WORKSPACE=$(echo "$CLIENTS" | jq -r '.[] | select(.class == "spotify") | .workspace.id')
 
 # Se encontrou um workspace, muda para ele
 if [ -n "$WORKSPACE" ]; then

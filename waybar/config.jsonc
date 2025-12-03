@@ -3,11 +3,11 @@
   "position": "top",
 
   "modules-left": [
-        "hyprland/workspaces",
-        "custom/spotify"
+        "hyprland/workspaces"
     ],
   "modules-center": ["clock"],
   "modules-right": [
+    "custom/spotify",
     "pulseaudio",
     "hyprland/language",
     "battery",
@@ -68,13 +68,13 @@
     "on-click": "pavucontrol"
   },
   "custom/spotify": {
-    "exec": "/usr/bin/python3 $HOME/.config/waybar/custom_modules/mediaplayer.py --player spotify",
+    "exec": "/usr/bin/python3 $HOME/.dotfiles/waybar/custom_modules/mediaplayer.py --player spotify",
     "format": "{}",
     "return-type": "json",
     "on-click": "playerctl --player=spotify play-pause",
     "on-scroll-up": "playerctl --player=spotify next",
     "on-scroll-down": "playerctl --player=spotify previous",
-    "on-click-right": "~/.config/waybar/scripts/switch_to_spotify.sh"
+    "on-click-right": "$HOME/.dotfiles//waybar/scripts/switch_to_spotify.sh"
  },
   "custom/lock": {
     "tooltip": false,

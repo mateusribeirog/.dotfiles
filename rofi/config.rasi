@@ -1,64 +1,113 @@
 /*-----Configuration-----*/
 
 configuration {
-	modes: "drun";
-	font: "JetbrainsMono Nerd Font";
-	drun-display-format: "{name}";
+    modes: "drun";
+    font: "JetBrainsMono Nerd Font";
+    drun-display-format: "{name}";
 }
 
 /*-----Global-----*/
 
 * {
-	color0: #282828; 
-    color2: #fe8019; 
-    color3: #928374; 
-    color4: #8ec07c; 
-    color5: #ebdbb2; 
+    /* ------------------------------------------------------------------------------
+       GRUVBOX DARK 
+       ------------------------------------------------------------------------------ */
+    /*
+    color0: #282828;      
+    color2: #fe8019;     
+    color3: #928374;    
+    color4: #8ec07c;   
+    color5: #ebdbb2;  
     color8: #3c3836; 
-    color9: #32302f; 
+    color9: #32302f;
+    fg-placeholder: #ebdbb250; 
+    */
 
-	fg-highlight: @color4;
 
-	bg-entry: @color9;
-	fg-entry: @color4;
-	fg-placeholder: #e0def450; /* text with 50% opacity */
+    /* ------------------------------------------------------------------------------
+       CATPPUCCIN MOCHA 
+       ------------------------------------------------------------------------------ */
+    /*
+    color0: #1e1e2e;      
+    color2: #cba6f7;      
+    color3: #6c7086;      
+    color4: #89dceb;      
+    color5: #cdd6f4;      
+    color8: #313244;      
+    color9: #181825;      
+    fg-placeholder: #cdd6f450; 
+    */
 
-	bg-listview: @color0;
-	fg-element: @color5;
+    /* ------------------------------------------------------------------------------
+       DRACULA 
+       ------------------------------------------------------------------------------ */
+    
+    color0: #282a36;      
+    color2: #bd93f9;      
+    color3: #6272a4;      
+    color4: #8be9fd;      
+    color5: #f8f8f2;      
+    color8: #44475a;      
+    color9: #21222c;      
+    fg-placeholder: #f8f8f250; 
+    
 
-	bg-element-selected: @color8;
-	fg-element-selected: @color2;
-	border-color-element-selected: @color3;
+    /* ------------------------------------------------------------------------------
+       ROSÉ PINE MOON 
+       ------------------------------------------------------------------------------ */
+    /*
+    color0: #232136;      
+    color2: #ea9a97;      
+    color3: #6e6a86;      
+    color4: #3e8fb0;      
+    color5: #e0def4;      
+    color8: #2a273f;      
+    color9: #393552;      
+    fg-placeholder: #e0def450; 
+    */
 
-	bg-inputbar: @color0;
 
-	border-color: @color3;
+    fg-highlight: @color4;
 
-	// border-radius
+    bg-entry: @color9;
+    fg-entry: @color4;
+
+    bg-listview: @color0;
+    fg-element: @color5;
+
+    bg-element-selected: @color8;
+    fg-element-selected: @color2;
+    border-color-element-selected: @color3;
+
+    bg-inputbar: @color0;
+
+    border-color: @color3;
+
+    // border-radius
     br: 2px;
 
-	border-size-window: 2px;
-	border-size-element-selected: 2px;
+    border-size-window: 2px;
+    border-size-element-selected: 2px;
 
-	spacing: 0;
+    spacing: 0;
 }
 
 /*-----Main Window-----*/
 
 window {
-	transparency: "real";
-	background-color: transparent;
+    transparency: "real";
+    background-color: transparent;
 
-	padding: 0;
+    padding: 0;
 
-	children: [mainbox];
+    children: [mainbox];
 
-	border: @border-size-window;
-	border-color: @border-color;
+    border: @border-size-window;
+    border-color: @border-color;
 
-	border-radius: @br;
+    border-radius: @br;
 
-	width: 20%;
+    width: 20%;
 }
 
 /*-----Main Box-----*/
@@ -71,82 +120,82 @@ mainbox {
 /*-----Input Bar-----*/
 
 inputbar {
-	children: [entry];
+    children: [entry];
 
-	background-color: @bg-inputbar;
+    background-color: @bg-inputbar;
 }
 
 entry {
-	color: @fg-entry;
-	placeholder-color: @fg-placeholder;
-	background-color: @bg-entry;
+    color: @fg-entry;
+    placeholder-color: @fg-placeholder;
+    background-color: @bg-entry;
 
-	placeholder:  "";
+    placeholder:  "";
 
-	text-transform: bold;
+    text-transform: bold;
 
-	border-radius: @br;
+    border-radius: @br;
 
-	padding: 12px;
-	margin: 10px;
+    padding: 12px;
+    margin: 10px;
     
-	vertical-align: 0.5;
+    vertical-align: 0.5;
 
-	border: 0;
+    border: 0;
 }
 
 /*-----List View-----*/
 
 listview {
-	scrollbar: false;
+    scrollbar: false;
 
-	border: 0;
-	lines: 5;   // 8 elements "per page"
+    border: 0;
+    lines: 5;   // 8 elements "per page"
 
-	background-color: @bg-listview;
+    background-color: @bg-listview;
 
-	padding: 10px;
+    padding: 10px;
 }
 
 element {
-	children: [element-icon, element-text];
-	spacing: 10px;
+    children: [element-icon, element-text];
+    spacing: 10px;
 
-	border-radius: @br;
+    border-radius: @br;
 }
 
 element-icon {
-	vertical-aling: 0.5;
+    vertical-aling: 0.5;
 
-	margin: 0 0 0 10px;
+    margin: 0 0 0 10px;
 }
 
 element-text {
-	vertical-align: 0.5;
-	text-transform: bold;
+    vertical-align: 0.5;
+    text-transform: bold;
 
-	border-radius: @br;
+    border-radius: @br;
 
-	color: @fg-element;
-	highlight: @fg-highlight;
+    color: @fg-element;
+    highlight: @fg-highlight;
 
-	padding: 5px;
-	margin: 10px 10px 10px 0;
+    padding: 5px;
+    margin: 10px 10px 10px 0;
 }
 
 element selected.normal {
-	background-color: @bg-element-selected;
+    background-color: @bg-element-selected;
 
-	border: @border-size-element-selected;
-	border-color: @border-color-element-selected;
+    border: @border-size-element-selected;
+    border-color: @border-color-element-selected;
 }
 
 element-text selected {
-	color: @fg-element-selected;
-	text-transform: bold;
+    color: @fg-element-selected;
+    text-transform: bold;
 }
 
 element normal.normal,
 element alternate.normal {
-	background-color: transparent;
+    background-color: transparent;
 }

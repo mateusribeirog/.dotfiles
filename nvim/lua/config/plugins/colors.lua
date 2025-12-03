@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "gruvbox"
+    color = color or "dracula"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
