@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "73813308abc2eaeff2bc0d3f2f79270c491be9d7" },
+  "NeoSolarized.nvim": { "branch": "master", "commit": "3c55ad358c062aa4879950c4f83b4deeac6b72df" },
   "alpha-nvim": { "branch": "main", "commit": "3979b01cb05734331c7873049001d3f2bb8477f4" },
   "black-metal-theme-neovim": { "branch": "main", "commit": "6d0207871387077f40d5396ab1ae90520e688d36" },
   "brightburn.vim": { "branch": "master", "commit": "fc0d2fafc51e86d6065acd54b5e82e686019ff2f" },

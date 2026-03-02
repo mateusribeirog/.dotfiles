@@ -1,6 +1,7 @@
 vim.o.guicursor =
     "n-v-c-sm:block-blinkwait175-blinkon175-blinkoff150," ..
     "i-ci-ve:ver25-blinkwait175-blinkon175-blinkoff150," ..
+    --"i-ci-ve:block-blinkwait175-blinkon175-blinkoff150," ..
     "r-cr-o:hor20"
 
 vim.opt.nu = true

@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your Oh My Zsh installation.
 alias vim='nvim'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 # Set name of the theme to load --- if set to "random", it will
@@ -116,3 +117,22 @@ eval "$(zoxide init zsh)"
 function cursor {
         /home/mateus/opt/cursor.AppImage $@
 }
+
+# opencode
+export PATH=/home/mateus/.opencode/bin:$PATH
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/usr/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/mateus/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/home/mateus/.lmstudio/bin"
