@@ -20,14 +20,6 @@ return {
         "erikbackman/brightburn.vim",
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        opts = {},
-        config = function()
-            ColorMyPencils()
-        end
-    },
-    {
         "ellisonleao/gruvbox.nvim",
         name = "gruvbox",
         config = function()
@@ -59,6 +51,8 @@ return {
     },
     {
         "folke/tokyonight.nvim",
+        lazy = false,
+        opts = {},
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here
@@ -76,6 +70,7 @@ return {
                     floats = "dark",   -- style for floating windows
                 },
             })
+            ColorMyPencils()
         end
     },
 
@@ -87,6 +82,7 @@ return {
                 disable_background = true,
                 styles = {
                     italic = false,
+                    transparency = true,
                 },
             })
             ColorMyPencils()
@@ -101,12 +97,13 @@ return {
                 -- optional configuration here
                 theme = "taake",
                 variant = "dark",
+                transparent = true,
                 code_style = {
                     comments = "none",
                     conditionals = "none",
                     functions = "none",
                     keywords = "none",
-                    headings = "bold", -- Markdown headings
+                    headings = "none", -- Markdown headings
                     operators = "none",
                     keyword_return = "none",
                     strings = "none",

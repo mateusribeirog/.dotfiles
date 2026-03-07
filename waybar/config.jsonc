@@ -46,7 +46,8 @@
     "format-ethernet": "󰈀 ",
     "format-disconnected": "󰤠 ",
     "interval": 5,
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "ghostty -e nmtui" 
   },
   "cpu": {
     "interval": 1,

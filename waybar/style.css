@@ -135,8 +135,6 @@ window#waybar {
     background-color: @bg;
 }
 
-/* --- Cores Mapeadas --- */
-
 #clock {
     margin-left: 8.75px;
     margin-right: 8.75px;
@@ -169,7 +167,6 @@ window#waybar {
     color: @fg;
 }
 
-/* --- Ajustes de Posição --- */
 
 #tray {
     margin-right: 16px;
@@ -197,7 +194,6 @@ window#waybar {
     margin-right: 8px;
 }
 
-/* --- Tooltips --- */
 tooltip {
     background: @bg;
     border: 1px solid @active_workspace;
@@ -210,4 +206,4 @@ tooltip label {
 
 .hidden {
     opacity: 0;
-}
+} 
