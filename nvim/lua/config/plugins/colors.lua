@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "rose-pine-moon"
+    color = color or "vague"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
@@ -115,23 +115,21 @@ return {
     },
     {
         'maxmx03/solarized.nvim',
-          ---@type solarized.config
         opts = {},
         config = function(_, opts)
-            vim.o.termguicolors = true
             require('solarized').setup({
                 transparent = {
-                    enabled = false,         -- Master switch to enable transparency
-                    pmenu = true,           -- Popup menu (e.g., autocomplete suggestions)
-                    normal = true,          -- Main editor window background
-                    normalfloat = true,     -- Floating windows
-                    neotree = true,         -- Neo-tree file explorer
-                    nvimtree = true,        -- Nvim-tree file explorer
-                    whichkey = true,        -- Which-key popup
-                    telescope = true,       -- Telescope fuzzy finder
-                    lazy = true,            -- Lazy plugin manager UI
-                    mason = true,           -- Mason manage external tooling
-              },
+                    enabled = false,    -- Master switch to enable transparency
+                    pmenu = true,       -- Popup menu (e.g., autocomplete suggestions)
+                    normal = true,      -- Main editor window background
+                    normalfloat = true, -- Floating windows
+                    neotree = true,     -- Neo-tree file explorer
+                    nvimtree = true,    -- Nvim-tree file explorer
+                    whichkey = true,    -- Which-key popup
+                    telescope = true,   -- Telescope fuzzy finder
+                    lazy = true,        -- Lazy plugin manager UI
+                    mason = true,       -- Mason manage external tooling
+                },
                 palette = 'solarized',
                 variant = 'autumn',
 
@@ -139,4 +137,51 @@ return {
             vim.o.background = 'light'
         end,
     },
+    {
+        "vague-theme/vague.nvim",
+        priority = 1000, -- make sure to load this before all the other plugins
+        config = function()
+            -- NOTE: you do not need to call setup if you don't want to.
+            require("vague").setup({
+                -- optional configuration here
+                require("vague").setup({
+                    -- Don't set background
+                    transparent = false,
+                    -- Disable bold/italic globally
+                    bold = false,
+                    italic = false,
+
+                    -- Override highlights or add new highlights
+                    on_highlights = function(highlights, colors) end,
+
+                    -- Override colors
+                    -- colors = {
+                    --     bg = "#141415",
+                    --     inactiveBg = "#1c1c24",
+                    --     fg = "#cdcdcd",
+                    --     floatBorder = "#878787",
+                    --     line = "#252530",
+                    --     comment = "#606079",
+                    --     builtin = "#b4d4cf",
+                    --     func = "#c48282",
+                    --     string = "#e8b589",
+                    --     number = "#e0a363",
+                    --     property = "#c3c3d5",
+                    --     constant = "#aeaed1",
+                    --     parameter = "#bb9dbd",
+                    --     visual = "#333738",
+                    --     error = "#d8647e",
+                    --     warning = "#f3be7c",
+                    --     hint = "#7e98e8",
+                    --     operator = "#90a0b5",
+                    --     keyword = "#6e94b2",
+                    --     type = "#9bb4bc",
+                    --     search = "#405065",
+                    --     plus = "#7fa563",
+                    --     delta = "#f3be7c",
+                    -- },
+                })
+            })
+        end
+    }
 }

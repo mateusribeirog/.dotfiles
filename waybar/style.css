@@ -22,6 +22,7 @@
    CATPPUCCIN MOCHA 
    ------------------------------------------------------------------------------ */
 
+/*
 @define-color bg                #1e1e2e;
 @define-color fg                #cdd6f4;
 @define-color inactive          #6c7086;
@@ -35,6 +36,7 @@
 @define-color battery_color     #a6e3a1; 
 @define-color spotify_color     #a6e3a1; 
 @define-color tray_bg           #1e1e2e;
+*/
 
 /* ------------------------------------------------------------------------------
    DRACULA 
@@ -74,6 +76,22 @@
 @define-color tray_bg           #232136;
 */
 
+/* ------------------------------------------------------------------------------
+   VAGUE 
+   ------------------------------------------------------------------------------ */
+@define-color bg                #18191a;
+@define-color fg                #cdcdcd;
+@define-color inactive          #4d4d4d;
+@define-color active_workspace  #8ca0aa; 
+@define-color urgent            #be8c8c; 
+@define-color clock_color       #9494b8; 
+@define-color cpu_color         #d4a381; 
+@define-color memory_color      #b8b894; 
+@define-color network_color     #8ca3a3; 
+@define-color audio_color       #b894b8; 
+@define-color battery_color     #8ca38c; 
+@define-color spotify_color     #8ca38c; 
+@define-color tray_bg           #18191a;
 
 * {
     background-color: @bg;
@@ -98,7 +116,7 @@ window#waybar {
     color: @inactive; 
     padding: 0 6px;
     margin: 0 1.5px;
-    min-width: 9px;
+    min-width: 10px;
     font-family: 'JetBrainsMono Nerd Font';
     font-size: 12px;
 }

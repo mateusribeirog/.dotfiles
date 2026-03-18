@@ -1,6 +1,8 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
-
+#set recolor "true"
+#set recolor-lightcolor "ffffff"
+#set recolor-darkcolor  "000000"
 
 #set notification-error-bg       "rgba(242,229,188,1)"  # bg
 #set notification-error-fg       "rgba(157,0,6,1)"      # bright:red

@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your Oh My Zsh installation.
 alias vim='nvim'
+alias vi='nvim'
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
