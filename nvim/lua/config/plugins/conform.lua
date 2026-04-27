@@ -3,6 +3,8 @@ return {
     opts = {
         formatters_by_ft = {
             python = { "ruff_fix", "ruff_format" },
+            c = { "clang-format" },
+            cpp = { "clang-format" },
         },
         format_on_save = {
             -- I recommend these options. See :help conform.format for details.

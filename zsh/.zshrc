@@ -3,6 +3,8 @@
 # Path to your Oh My Zsh installation.
 alias vim='nvim'
 alias vi='nvim'
+alias av='source .venv/bin/activate'
+alias dav='deactivate'
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"

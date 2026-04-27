@@ -1,64 +1,36 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    dependencies={
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "nvim-treesitter/playground"
-    },
-    config = function ()
-        require'nvim-treesitter.configs'.setup{
-            -- A list of parser names, or "all" (the five listed parsers should always be installed)
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "rust"},
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+    build = ":TSUpdate",
+    config = function()
+        require("nvim-treesitter").setup({})
+        require("nvim-treesitter").install({ "c", "python", "lua", "vim", "markdown" })
 
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-            auto_install = false,
-
-            -- List of parsers to ignore installing (or "all")
-            ignore_install = {},
-
-            ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-            -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-            highlight = {
-                enable = true,
-
-                -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-                -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-                -- the name of the parser)
-                -- list of language that will be disabled
-                -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-                -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-                -- Using this option may slow down your editor, and you may see some duplicate highlights.
-                -- Instead of true it can also be a list of languages
-                additional_vim_regex_highlighting = false,
+        require("nvim-treesitter-textobjects").setup({
+            select = {
+                lookahead = true,
             },
-            indent = {
-                enable = true,
-            },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "gnn",
-                    node_incremental = "grn",
-                    scope_incremental = "grc",
-                    node_decremental = "grm",
-                },
-            },
+        })
 
-            textobjects = {
-                select = {
-                    enable = true,
-                    keymaps = {
-                        ["af"] = "@function.outer",
-                        ["if"] = "@function.inner",
-                        ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
-                    }
-                }
-            }
-        }
-    end,
+        vim.keymap.set({ "x", "o" }, "af", function()
+            require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "if", function()
+            require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "ac", function()
+            require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+        end)
+        vim.keymap.set({ "x", "o" }, "ic", function()
+            require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+        end)
+
+        local group = vim.api.nvim_create_augroup("MateusTreeSitter", { clear = true })
+        vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
+            group = group,
+            callback = function()
+                pcall(vim.treesitter.start)
+            end
+        })
+    end
 }

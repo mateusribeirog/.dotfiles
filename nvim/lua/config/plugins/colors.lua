@@ -146,7 +146,7 @@ return {
                 -- optional configuration here
                 require("vague").setup({
                     -- Don't set background
-                    transparent = false,
+                    transparent = true,
                     -- Disable bold/italic globally
                     bold = false,
                     italic = false,

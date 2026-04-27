@@ -27,6 +27,15 @@ return {
                         local lua_opts = lsp_zero.nvim_lua_ls()
                         require('lspconfig').lua_ls.setup(lua_opts)
                     end,
+                    tinymist = function()
+                        require("lspconfig")["tinymist"].setup {
+                            settings = {
+                                formatterMode = "typstyle",
+                                exportPdf = "onType",
+                                semanticTokens = "disable"
+                            }
+                        }
+                    end,
                     pyright = function()
                         local lspconfig = require('lspconfig')
                         local util = require('lspconfig.util')
