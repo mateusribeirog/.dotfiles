@@ -39,8 +39,18 @@
  "clock": {
     "timezone": "America/Fortaleza",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m - %H:%M}"
-  },
+    "format": "{:%A - %d/%m - %H:%M}",
+    "calendar": {
+        "on-scroll": 1,
+        "format": {
+            "today": "<span color='#ff6699'><b>{}</b></span>"
+        }
+    },
+    "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    }
+},
   "network": {
     "format-wifi": "󰤢 ",
     "format-ethernet": "󰈀 ",

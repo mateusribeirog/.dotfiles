@@ -12,7 +12,7 @@ fi
 CLIENTS=$(hyprctl clients -j)
 
 # Procura pela janela do Spotify 
-WORKSPACE=$(echo "$CLIENTS" | jq -r '.[] | select(.class == "spotify") | .workspace.id')
+WORKSPACE=$(echo "$CLIENTS" | jq -r '.[] | select(.class == "Spotify") | .workspace.id')
 
 # Se encontrou um workspace, muda para ele
 if [ -n "$WORKSPACE" ]; then
