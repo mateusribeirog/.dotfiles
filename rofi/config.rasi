@@ -23,11 +23,9 @@ configuration {
     fg-placeholder: #ebdbb250; 
     */
 
-
     /* ------------------------------------------------------------------------------
        CATPPUCCIN MOCHA 
        ------------------------------------------------------------------------------ */
-    /*
     color0: #1e1e2e;      
     color2: #cba6f7;      
     color3: #6c7086;      
@@ -36,7 +34,6 @@ configuration {
     color8: #313244;      
     color9: #181825;      
     fg-placeholder: #cdd6f450; 
-    */
 
     /* ------------------------------------------------------------------------------
        DRACULA 
@@ -72,6 +69,7 @@ configuration {
        VAGUE
        ------------------------------------------------------------------------------ */
     
+    /*
     color0: #18191a;
     color2: #8ca0aa;
     color3: #4d4d4d;
@@ -80,7 +78,7 @@ configuration {
     color8: #2c2d2e;
     color9: #151617;
     fg-placeholder: #cdcdcd80;
-    
+    */
 
     fg-highlight: @color4;
 

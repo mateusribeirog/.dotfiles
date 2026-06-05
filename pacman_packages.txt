@@ -1,8 +1,6 @@
 alacritty
 amd-ucode
 ani-cli
-antigravity
-antigravity-debug
 appstream-glib
 base
 bluetui

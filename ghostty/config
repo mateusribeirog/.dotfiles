@@ -2,8 +2,8 @@
 #font-family = "Iosevka Term"
 font-size = 13
 theme = Vague
-#background = 000000
-#background-opacity = 0.8
+background = 000000
+background-opacity = 0.8
 background-blur = true 
 confirm-close-surface=false
 cursor-style = block
