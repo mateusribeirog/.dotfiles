@@ -9,6 +9,7 @@ vim.opt.background = "dark"
 vim.o.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.showmode = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -43,4 +44,9 @@ vim.filetype.add({
         ["compose.yaml"] = "yaml.docker-compose",
         ["compose.yml"] = "yaml.docker-compose",
     },
+})
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+    pattern = "*.cpp",
+    command = "0r ~/.config/nvim/templates/cp.cpp"
 })

@@ -1,4 +1,4 @@
-local default_theme = "gruvbox"
+local default_theme = "rose-pine-moon"
 
 function ColorMyPencils(color)
     color = color or default_theme
