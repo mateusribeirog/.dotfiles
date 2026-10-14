@@ -1,0 +1,102 @@
+# ~/.config/aerospace/aerospace.toml
+# Ported from hypr/hyprland.conf in mateusribeirog/.dotfiles
+# $mainMod = SUPER  ->  alt  (cmd is taken by macOS: cmd-q, cmd-t, cmd-w…)
+# Reload after edits: aerospace reload-config  (or alt-shift-; then r)
+
+start-at-login = true
+
+# Hyprland: border_size = 1  (needs: brew install FelixKratz/formulae/borders)
+# after-startup-command = ['exec-and-forget borders active_color=0xffbd93f9 inactive_color=0xff44475a width=1.0']
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Hyprland: layout = dwindle  (AeroSpace has no dwindle; 'tiles' is closest)
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = true
+
+[key-mapping]
+preset = 'qwerty'   # bindings follow physical key positions
+
+# Hyprland: gaps_in = 3, gaps_out = 4
+[gaps]
+inner.horizontal = 2
+inner.vertical   = 2
+# outer.left       = 4
+# outer.right      = 4
+# outer.top        = 4
+# outer.bottom     = 4
+
+[mode.main.binding]
+# --- apps / windows --------------------------------------------------------
+alt-t       = 'exec-and-forget open -na Ghostty'   # was SUPER+Q  ($terminal)
+alt-q       = 'close'                              # was SUPER+C  (killactive)
+alt-e       = 'exec-and-forget open ~'             # was SUPER+E  ($fileManager -> Finder)
+alt-v       = 'layout floating tiling'             # SUPER+V togglefloating
+alt-f       = 'fullscreen'                         # SUPER+F
+alt-shift-m = 'enable toggle'                      # SUPER+SHIFT+M exit -> turns tiling off/on
+# alt-r     -> left free: Spotlight replaces rofi (cmd-space, or remap it to alt-r
+#              in System Settings > Keyboard > Keyboard Shortcuts > Spotlight)
+# alt-w     = 'exec-and-forget sketchybar --reload' # SUPER+W waybar restart, if you use SketchyBar
+
+# --- focus (arrows + hjkl, like your config) -------------------------------
+alt-left  = 'focus left'
+alt-right = 'focus right'
+alt-up    = 'focus up'
+alt-down  = 'focus down'
+alt-h     = 'focus left'
+alt-l     = 'focus right'
+alt-k     = 'focus up'
+alt-j     = 'focus down'
+
+# --- swap / resize ---------------------------------------------------------
+alt-shift-j = 'swap dfs-next'          # SUPER+SHIFT+J swapnext
+alt-shift-h = 'resize width -50'       # SUPER+SHIFT+H resizeactive -50 0
+alt-shift-l = 'resize width +50'       # SUPER+SHIFT+L resizeactive 50 0
+
+# --- monitors --------------------------------------------------------------
+alt-m = 'move-workspace-to-monitor --wrap-around next'   # SUPER+M movecurrentworkspacetomonitor +1
+
+# --- workspaces 1-10 -------------------------------------------------------
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-0 = 'move-node-to-workspace 10'
+
+# --- special:magic -> a named workspace "S" (no true scratchpad overlay) ---
+alt-s       = 'workspace S'
+alt-shift-s = 'move-node-to-workspace S'
+alt-tab     = 'workspace-back-and-forth'   # jump back out of S (or anywhere)
+
+# --- extra: service mode for reloading -------------------------------------
+alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+r   = ['reload-config', 'mode main']
+f   = ['layout floating tiling', 'mode main']
+esc = 'mode main'
+
+# --- window rules ----------------------------------------------------------
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'

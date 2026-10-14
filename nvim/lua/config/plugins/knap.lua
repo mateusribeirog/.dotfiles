@@ -3,37 +3,49 @@ return {
         "frabjous/knap",
         lazy = false,
         config = function()
-            -- Configure KNAP settings
+            local is_mac = vim.fn.has("macunix") == 1
+
+            local pdf_viewer = is_mac
+                and "open -a Skim %outputfile%"
+                or "zathura %outputfile%"
+
+            local pdf_refresh = is_mac
+                and ""
+                or "kill -HUP %pid%"
+
             vim.g.knap_settings = {
-                -- Markdown settings
+                -- Markdown
                 mdoutputext = "pdf",
                 mdtopdf = "pandoc -o %outputfile% --pdf-engine=xelatex",
-                mdtopdfviewerlaunch = "zathura %outputfile%",
-                mdtopdfviewerrefresh = "kill -HUP %pid%",
+                mdtopdfviewerlaunch = pdf_viewer,
+                mdtopdfviewerrefresh = pdf_refresh,
                 mdtopdfbufferasstdin = true,
 
-                -- LaTeX settings
+                -- LaTeX
                 texoutputext = "pdf",
-                textopdf = "pdflatex -synctex=1 -halt-on-error -interaction=batchmode %docroot%",
-                textopdfviewerlaunch = "zathura %outputfile%",
-                textopdfviewerrefresh = "kill -HUP %pid%",
+                textopdf = "latexmk -pdf -synctex=1 -interaction=nonstopmode %docroot%",
+                textopdfviewerlaunch = pdf_viewer,
+                textopdfviewerrefresh = pdf_refresh,
             }
 
-            -- Set up keymappings for all markdown files
             vim.api.nvim_create_autocmd("FileType", {
-                pattern = { "markdown", "pandoc", "md", "tex" },
+                pattern = { "markdown", "pandoc", "tex" },
                 callback = function()
                     vim.keymap.set("n", "<leader>pv", function()
                         require("knap").toggle_autopreviewing()
-                    end, { buffer = true, desc = "KNAP toggle auto-preview" })
+                    end, {
+                        buffer = true,
+                        desc = "Toggle KNAP auto-preview",
+                    })
                 end,
             })
         end,
     },
+
     {
-        'chomosuke/typst-preview.nvim',
-        lazy = false, -- or ft = 'typst'
-        version = '1.*',
-        opts = {},    -- lazy.nvim will implicitly calls `setup {}`
-    }
+        "chomosuke/typst-preview.nvim",
+        ft = "typst",
+        version = "1.*",
+        opts = {},
+    },
 }

@@ -10,6 +10,7 @@ vim.o.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.showmode = false
+vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
